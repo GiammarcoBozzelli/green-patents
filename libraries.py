@@ -1,4 +1,4 @@
-def libraries(self):
+def lib(self):
         self.libraries = ['numpy', 'pandas', 'seaborn', 'matplotlib', 'plotly', 'scipy', 'scikit-learn', 'statsmodels', 'linearmodels', 'stargazer', 'pycountry']
 
         self.missing_libraries = [lib for lib in self.libraries if importlib.util.find_spec(lib) is None]
