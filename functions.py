@@ -1,7 +1,12 @@
-def lib(self):
-        self.libraries = ['numpy', 'pandas', 'seaborn', 'matplotlib', 'plotly', 'scipy', 'scikit-learn', 'statsmodels', 'linearmodels', 'stargazer', 'pycountry']
+# libraries.py
 
+import importlib
+
+class LibraryInstaller:
+    def __init__(self):
+        self.libraries = ['numpy', 'pandas', 'seaborn', 'matplotlib', 'plotly', 'scipy', 'scikit-learn', 'statsmodels', 'linearmodels', 'stargazer', 'pycountry']
         self.missing_libraries = [lib for lib in self.libraries if importlib.util.find_spec(lib) is None]
+
         if self.missing_libraries:
             for lib in self.missing_libraries:
                 !pip install {lib}
