@@ -16,7 +16,7 @@ def plot_1(df):
   plt.grid(True)
   plt.show()
 
-def graphe(self): # plot graph to illustrate the Dif-in-dif theoretical model
+def graphe(): # plot graph to illustrate the Dif-in-dif theoretical model
     x1 = np.linspace(0, 10, 100)
     y1 = 1.5 * x1 + 4
 
