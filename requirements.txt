@@ -6,7 +6,7 @@ plotly==5.7.0
 scipy==1.8.0
 scikit-learn==1.0.2
 statsmodels==0.13.1
-linearmodels==5.8.0
-linearmodels.diagnostic==1.1.0
-stargazer==0.49
-pycountry==21.9.28
+linearmodels
+linearmodels.diagnostic
+stargazer
+pycountry
