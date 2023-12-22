@@ -127,8 +127,10 @@ def difdifger_bel():
 
 
 def ratiotha_mal():
+  cata = pd.read_csv('https://raw.githubusercontent.com/GiammarcoBozzelli/green-patents/main/data/cata.csv')
+  
   sample = ['thailand', 'malaysia']
-
+  
   plt.figure(figsize=(15, 6))
   for pays in sample:
     data_selected = cata[(cata['Country'] == pays) & (cata['Year'].between(1995, 2022))]
