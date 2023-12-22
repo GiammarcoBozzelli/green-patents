@@ -3,9 +3,9 @@ def lib_check(self):
   libraries = ['numpy', 'pandas', 'seaborn', 'matplotlib', 'plotly', 'scipy', 'scikit-learn', 'statsmodels', 'linearmodels', 'stargazer', 'pycountry']
   missing_libraries = [lib for lib in self.libraries if importlib.util.find_spec(lib) is None]
 
-  if self.missing_libraries:
-      for lib in self.missing_libraries:
-          !pip install {lib}
+  if missing_libraries:
+      for lib in missing_libraries:
+          !pip install lib
   else:
       print("All required libraries are already installed.")
 
