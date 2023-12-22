@@ -48,7 +48,10 @@ def graphe(self): # plot graph to illustrate the Dif-in-dif theoretical model
     return plt.show()
 
 
-def ratioger_bel(df):
+def ratioger_bel():
+
+    df = pd.read_csv('https://raw.githubusercontent.com/GiammarcoBozzelli/green-patents/main/data/cata.csv')
+  
     sample = ['germany', 'belgium']
 
     plt.figure(figsize=(15, 6))
