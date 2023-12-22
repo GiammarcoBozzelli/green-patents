@@ -1,3 +1,7 @@
+import np as numpy
+import pandas as pd
+import matplotlib.pyplot as plt
+
 def plot_1(df):
   avg_patents_by_year = df.groupby('Year')['patents_number'].mean().reset_index().dropna()
   avg_damage_by_year = df.groupby('Year')['total_affected'].mean().reset_index().dropna()
