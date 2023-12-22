@@ -1,6 +1,16 @@
 import numpy as np
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.express as px
+import scipy.stats as stats
+from IPython.display import display
+from sklearn.linear_model import LinearRegression
+import statsmodels.api as sm
+from linearmodels.panel import PanelOLS
+from stargazer.stargazer import Stargazer
+import pycountry
+from IPython.display import Image, display,HTML
 
 def plot_1(df):
   avg_patents_by_year = df.groupby('Year')['patents_number'].mean().reset_index().dropna()
