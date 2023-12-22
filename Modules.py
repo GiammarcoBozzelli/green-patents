@@ -1,6 +1,6 @@
-def plot_1(merged_final):
-  avg_patents_by_year = merged_final.groupby('Year')['patents_number'].mean().reset_index().dropna()
-  avg_damage_by_year = merged_final.groupby('Year')['total_affected'].mean().reset_index().dropna()
+def plot_1(df):
+  avg_patents_by_year = df.groupby('Year')['patents_number'].mean().reset_index().dropna()
+  avg_damage_by_year = df.groupby('Year')['total_affected'].mean().reset_index().dropna()
   plt.figure(figsize=(10, 6))
   plt.plot(avg_patents_by_year['Year'], np.log(avg_patents_by_year['patents_number']), linestyle='-', color='b', label='Yearly average number of patents')
   plt.plot(avg_damage_by_year['Year'], np.log(avg_damage_by_year['total_affected']), linestyle='-', color='r', label='Yearly Average number of people affected')
