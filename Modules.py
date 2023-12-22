@@ -1,4 +1,4 @@
-def plot_1():
+def plot_1(merged_final):
   avg_patents_by_year = merged_final.groupby('Year')['patents_number'].mean().reset_index().dropna()
   avg_damage_by_year = merged_final.groupby('Year')['total_affected'].mean().reset_index().dropna()
   plt.figure(figsize=(10, 6))
