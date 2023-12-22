@@ -164,6 +164,29 @@ def ratiotha_mal():
   plt.show()
 
 def difdiftha_mal():
+
+  tha_mal = pd.read_csv('https://github.com/GiammarcoBozzelli/green-patents/raw/main/data/tha_mal.csv')
+
+  tha_mal['After Chock Thailand'] = tha_mal['is Thailand'] * tha_mal['After Chock']
+
+  thailand_data = tha_mal[tha_mal['is Thailand'] == 1]
+
+  model_thailand = sm.OLS(thailand_data['Patent per Capita'],
+                          sm.add_constant(thailand_data[['After Chock', 'After Chock Thailand']]))
+
+  results_thailand = model_thailand.fit()
+
+  predictions_thailand = results_thailand.predict()
+
+  malaysia_data = tha_mal[tha_mal['is Thailand'] == 0]
+
+  model_malaysia = sm.OLS(malaysia_data['Patent per Capita'],
+                          sm.add_constant(malaysia_data[['After Chock', 'After Chock Thailand']]))
+
+  results_malaysia = model_malaysia.fit()
+
+  predictions_malaysia = results_malaysia.predict()
+
   plt.figure(figsize=(10, 6))
 
 #Sort data from 1990 to 2021
