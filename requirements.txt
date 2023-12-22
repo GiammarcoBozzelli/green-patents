@@ -7,6 +7,5 @@ scipy
 scikit-learn
 statsmodels
 linearmodels
-linearmodels.diagnostic
 stargazer
 pycountry
