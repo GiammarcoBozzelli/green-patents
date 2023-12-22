@@ -48,12 +48,12 @@ def graphe(self): # plot graph to illustrate the Dif-in-dif theoretical model
     return plt.show()
 
 
-def ratioger_bel():
+def ratioger_bel(df):
     sample = ['germany', 'belgium']
 
     plt.figure(figsize=(15, 6))
     for pays in sample:
-        data_selected = cata[(cata['Country'] == pays) & (cata['Year'].between(1990, 2022))]
+        data_selected = df[(df['Country'] == pays) & (df['Year'].between(1990, 2022))]
         catastrophes_per_year = data_selected['Year'].value_counts().sort_index()
         damage_per_year = data_selected.groupby('Year')["Total Affected"].sum().fillna(0)
 
