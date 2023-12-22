@@ -77,7 +77,30 @@ def ratioger_bel():
 def difdifger_bel():
   plt.figure(figsize=(10, 6))
 
+  ger_bel = pd.read_csv('https://github.com/GiammarcoBozzelli/green-patents/raw/main/data/ger_bel.csv')
+
+  germany_data = ger_bel[ger_bel['is Germany'] == 1]
+  
+  model_germany = sm.OLS(germany_data['Patent per Capita'],
+                        sm.add_constant(germany_data[['after chock', 'After Chock Gemrany']]))
+
+  results_germany = model_germany.fit()
+
+  predictions_germany = results_germany.predict()
+
+
+  belgium_data = ger_bel[ger_bel['is Germany'] == 0]
+
+  model_belgium = sm.OLS(belgium_data['Patent per Capita'],
+                          sm.add_constant(belgium_data[['after chock', 'After Chock Gemrany']]))
+
+  results_belgium = model_belgium.fit()
+
+  predictions_belgium = results_belgium.predict()
+
+
 #Sort data from 1990 to 2021
+
   germany_data_filtered = germany_data[(germany_data['Year'] >= 1990) & (germany_data['Year'] <= 2021)]
   predictions_germany_filtered = predictions_germany[(germany_data['Year'] >= 1990) & (germany_data['Year'] <= 2021)]
 
